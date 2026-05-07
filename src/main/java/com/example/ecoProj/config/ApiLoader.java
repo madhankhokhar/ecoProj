@@ -60,7 +60,7 @@ public class ApiLoader implements CommandLineRunner {
 
             for (String path : paths) {
 
-                System.out.println("Found API: " + path);
+                //System.out.println("Found API: " + path);
 
                 // ================= FILTER ONLY PROJECT APIs =================
 
@@ -100,7 +100,7 @@ public class ApiLoader implements CommandLineRunner {
 
         mapRoles(userPerm, adminPerm);
 
-        System.out.println("✅ APIs + Permissions mapped successfully");
+//        System.out.println("✅ APIs + Permissions mapped successfully");
     }
 
     // =========================================================
@@ -178,14 +178,14 @@ public class ApiLoader implements CommandLineRunner {
 
     private void mapPermissionApi(Permission permission, Api api) {
 
-        System.out.println(
-                "Mapping: " +
-                        permission.getPermissionName() +
-                        " -> " +
-                        api.getMethod() +
-                        ":" +
-                        api.getPath()
-        );
+//        System.out.println(
+//                "Mapping: " +
+//                        permission.getPermissionName() +
+//                        " -> " +
+//                        api.getMethod() +
+//                        ":" +
+//                        api.getPath()
+//        );
 
         boolean exists =
                 permissionApiRepo.existsByPermissionAndApi(

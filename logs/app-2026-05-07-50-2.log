@@ -1,4 +1,0 @@
-2026-05-07 11:50:50 [http-nio-8080-exec-7] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: dewan@gmail.com
-2026-05-07 11:50:50 [http-nio-8080-exec-7] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: dewan@gmail.com
-2026-05-07 11:50:50 [http-nio-8080-exec-7] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_USER, GET:/user/products/**, GET:/user/products, GET:/user/profile]
-2026-05-07 11:50:50 [http-nio-8080-exec-7] INFO  com.example.ecoProj.config.JwtFilter - Request: GET /user/profile
