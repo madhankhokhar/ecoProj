@@ -1,0 +1,46 @@
+2026-05-07 11:51:02 [http-nio-8080-exec-8] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: dewan@gmail.com
+2026-05-07 11:51:02 [http-nio-8080-exec-8] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: dewan@gmail.com
+2026-05-07 11:51:02 [http-nio-8080-exec-8] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_USER, GET:/user/products/**, GET:/user/products, GET:/user/profile]
+2026-05-07 11:51:02 [http-nio-8080-exec-8] INFO  com.example.ecoProj.config.JwtFilter - Request: GET /user/products
+2026-05-07 11:51:12 [http-nio-8080-exec-9] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: dewan@gmail.com
+2026-05-07 11:51:12 [http-nio-8080-exec-9] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: dewan@gmail.com
+2026-05-07 11:51:12 [http-nio-8080-exec-9] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_USER, GET:/user/products/**, GET:/user/products, GET:/user/profile]
+2026-05-07 11:51:12 [http-nio-8080-exec-9] INFO  com.example.ecoProj.config.JwtFilter - Request: GET /user/product
+2026-05-07 11:51:12 [http-nio-8080-exec-9] WARN  com.example.ecoProj.config.JwtFilter - Access denied for user: dewan@gmail.com on GET:/user/product
+2026-05-07 11:51:20 [http-nio-8080-exec-10] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: dewan@gmail.com
+2026-05-07 11:51:20 [http-nio-8080-exec-10] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: dewan@gmail.com
+2026-05-07 11:51:20 [http-nio-8080-exec-10] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_USER, GET:/user/products/**, GET:/user/products, GET:/user/profile]
+2026-05-07 11:51:20 [http-nio-8080-exec-10] INFO  com.example.ecoProj.config.JwtFilter - Request: GET /admin/products
+2026-05-07 11:51:20 [http-nio-8080-exec-10] WARN  com.example.ecoProj.config.JwtFilter - Access denied for user: dewan@gmail.com on GET:/admin/products
+2026-05-07 11:51:44 [http-nio-8080-exec-2] INFO  com.example.ecoProj.Service.UserService - Authenticating user: madhan@gmail.com
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: madhan@gmail.com
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added role: ROLE_ADMIN
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/products
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/profile
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/products/**
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: PUT:/admin/product/**
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: POST:/admin/product
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: DELETE:/admin/product/**
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: DELETE:/admin/user/**
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Total unique authorities assigned: 8
+2026-05-07 11:51:45 [http-nio-8080-exec-2] INFO  com.example.ecoProj.Service.UserService - User authenticated successfully: madhan@gmail.com
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: madhan@gmail.com
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added role: ROLE_ADMIN
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/products
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/profile
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/products/**
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: PUT:/admin/product/**
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: POST:/admin/product
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: DELETE:/admin/product/**
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: DELETE:/admin/user/**
+2026-05-07 11:51:45 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Total unique authorities assigned: 8
+2026-05-07 11:51:45 [http-nio-8080-exec-2] INFO  com.example.ecoProj.Service.JwtService - Generating JWT token for user: madhan@gmail.com
+2026-05-07 11:52:31 [http-nio-8080-exec-1] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: madhan@gmail.com
+2026-05-07 11:52:31 [http-nio-8080-exec-1] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: madhan@gmail.com
+2026-05-07 11:52:31 [http-nio-8080-exec-1] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_ADMIN, DELETE:/admin/user/**, GET:/user/products/**, PUT:/admin/product/**, POST:/admin/product, GET:/user/products, DELETE:/admin/product/**, GET:/user/profile]
+2026-05-07 11:52:31 [http-nio-8080-exec-1] INFO  com.example.ecoProj.config.JwtFilter - Request: POST /user/profile
+2026-05-07 11:52:31 [http-nio-8080-exec-1] WARN  com.example.ecoProj.config.JwtFilter - Access denied for user: madhan@gmail.com on POST:/user/profile
+2026-05-07 11:52:39 [http-nio-8080-exec-3] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: madhan@gmail.com
+2026-05-07 11:52:39 [http-nio-8080-exec-3] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: madhan@gmail.com
+2026-05-07 11:52:39 [http-nio-8080-exec-3] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_ADMIN, DELETE:/admin/user/**, GET:/user/products/**, PUT:/admin/product/**, POST:/admin/product, GET:/user/products, DELETE:/admin/product/**, GET:/user/profile]
+2026-05-07 11:52:39 [http-nio-8080-exec-3] INFO  com.example.ecoProj.config.JwtFilter - Request: GET /user/profile

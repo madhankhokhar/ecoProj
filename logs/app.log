@@ -1,261 +1,41 @@
-2026-04-28 16:11:03 INFO  EcoProjApplication - Starting EcoProjApplication using Java 17.0.12 with PID 1004 (C:\Users\Java Intern\Downloads\ecoProj\target\classes started by Java Intern in C:\Users\Java Intern\Downloads\ecoProj)
-2026-04-28 16:11:03 INFO  EcoProjApplication - No active profile set, falling back to 1 default profile: "default"
-2026-04-28 16:11:03 INFO  DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-04-28 16:11:03 INFO  DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-04-28 16:11:05 INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-28 16:11:05 INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces.
-2026-04-28 16:11:06 INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-04-28 16:11:06 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:11:06 INFO  StandardService - Starting service [Tomcat]
-2026-04-28 16:11:06 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
-2026-04-28 16:11:06 INFO  WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2611 ms
-2026-04-28 16:11:06 INFO  jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-28 16:11:06 INFO  core - HHH000001: Hibernate ORM core version 7.2.7.Final
-2026-04-28 16:11:07 INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-28 16:11:07 INFO  HikariDataSource - HikariPool-1 - Starting...
-2026-04-28 16:11:07 INFO  HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@185c1b44
-2026-04-28 16:11:07 INFO  HikariDataSource - HikariPool-1 - Start completed.
-2026-04-28 16:11:07 WARN  deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-28 16:11:07 INFO  pooling - HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/ecoproj]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.45
-	Default catalog/schema: ecoproj/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-04-28 16:11:09 INFO  core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-28 16:11:09 INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-28 16:11:09 INFO  QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-04-28 16:11:09 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2026-04-28 16:11:09 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
-2026-04-28 16:11:09 WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-28 16:11:10 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:11:10 INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-04-28 16:11:10 INFO  EcoProjApplication - Started EcoProjApplication in 8.012 seconds (process running for 10.832)
-2026-04-28 16:13:40 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 16 class path changes (0 additions, 16 deletions, 0 modifications)
-2026-04-28 16:13:40 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-28 16:13:40 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:13:40 INFO  GracefulShutdown - Graceful shutdown complete
-2026-04-28 16:13:40 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:13:40 INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-28 16:13:40 INFO  HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-04-28 16:13:40 INFO  HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-04-28 16:13:41 INFO  EcoProjApplication - Starting EcoProjApplication using Java 17.0.12 with PID 1004 (C:\Users\Java Intern\Downloads\ecoProj\target\classes started by Java Intern in C:\Users\Java Intern\Downloads\ecoProj)
-2026-04-28 16:13:41 INFO  EcoProjApplication - No active profile set, falling back to 1 default profile: "default"
-2026-04-28 16:13:42 INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-28 16:13:42 INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
-2026-04-28 16:13:43 INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-04-28 16:13:43 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:13:43 INFO  StandardService - Starting service [Tomcat]
-2026-04-28 16:13:43 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
-2026-04-28 16:13:43 INFO  WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1944 ms
-2026-04-28 16:13:43 WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'inMemoryDatabaseShutdownExecutor' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'inMemoryDatabaseShutdownExecutor' defined in class path resource [org/springframework/boot/devtools/autoconfigure/DevToolsDataSourceAutoConfiguration.class]: Unsatisfied dependency expressed through method 'inMemoryDatabaseShutdownExecutor' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/jdbc/autoconfigure/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
-2026-04-28 16:13:43 INFO  StandardService - Stopping service [Tomcat]
-2026-04-28 16:13:43 INFO  ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-04-28 16:13:43 ERROR LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
-
-Reason: Failed to determine a suitable driver class
-
-
-Action:
-
-Consider the following:
-	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
-	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
-
-2026-04-28 16:13:45 INFO  EcoProjApplication - Starting EcoProjApplication using Java 17.0.12 with PID 1004 (C:\Users\Java Intern\Downloads\ecoProj\target\classes started by Java Intern in C:\Users\Java Intern\Downloads\ecoProj)
-2026-04-28 16:13:45 INFO  EcoProjApplication - No active profile set, falling back to 1 default profile: "default"
-2026-04-28 16:13:45 INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-28 16:13:45 INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
-2026-04-28 16:13:45 INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-04-28 16:13:45 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:13:45 INFO  StandardService - Starting service [Tomcat]
-2026-04-28 16:13:45 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
-2026-04-28 16:13:46 INFO  WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 786 ms
-2026-04-28 16:13:46 INFO  jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-28 16:13:46 INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-28 16:13:46 INFO  HikariDataSource - HikariPool-2 - Starting...
-2026-04-28 16:13:46 INFO  HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44e0a972
-2026-04-28 16:13:46 INFO  HikariDataSource - HikariPool-2 - Start completed.
-2026-04-28 16:13:46 WARN  deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-28 16:13:46 INFO  pooling - HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/ecoproj]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.45
-	Default catalog/schema: ecoproj/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-04-28 16:13:46 INFO  core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-28 16:13:46 INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-28 16:13:46 WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-28 16:13:46 WARN  UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 703941b1-2a61-486c-8a0f-64d45e4b6893
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2026-04-28 16:13:46 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-04-28 16:13:47 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:13:47 INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-04-28 16:13:47 INFO  EcoProjApplication - Started EcoProjApplication in 1.977 seconds (process running for 167.245)
-2026-04-28 16:13:47 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
-
-
-==========================
-CONDITION EVALUATION DELTA
-==========================
-
-
-Positive matches:
------------------
-
-   ServletWebSecurityAutoConfiguration.EnableWebSecurityConfiguration matched:
-      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
-      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
-
-   ServletWebSecurityAutoConfiguration.SecurityFilterChainConfiguration matched:
-      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
-
-   UserDetailsServiceAutoConfiguration matched:
-      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
-      - found 'session' scope (OnWebApplicationCondition)
-      - AnyNestedCondition 1 matched 2 did not; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'spring.security.user.password'; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'spring.security.user.name'; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured)
-      - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)
-
-
-Negative matches:
------------------
-
-    None
-
-
-Exclusions:
------------
-
-    None
-
-
-Unconditional classes:
-----------------------
-
-    None
-
-
-
-2026-04-28 16:13:54 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 14 class path changes (14 additions, 0 deletions, 0 modifications)
-2026-04-28 16:13:54 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-28 16:13:54 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:13:54 INFO  GracefulShutdown - Graceful shutdown complete
-2026-04-28 16:13:54 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:13:54 INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-28 16:13:54 INFO  HikariDataSource - HikariPool-2 - Shutdown initiated...
-2026-04-28 16:13:54 INFO  HikariDataSource - HikariPool-2 - Shutdown completed.
-2026-04-28 16:13:54 INFO  EcoProjApplication - Starting EcoProjApplication using Java 17.0.12 with PID 1004 (C:\Users\Java Intern\Downloads\ecoProj\target\classes started by Java Intern in C:\Users\Java Intern\Downloads\ecoProj)
-2026-04-28 16:13:54 INFO  EcoProjApplication - No active profile set, falling back to 1 default profile: "default"
-2026-04-28 16:13:55 INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-04-28 16:13:55 INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
-2026-04-28 16:13:55 INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-04-28 16:13:55 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:13:55 INFO  StandardService - Starting service [Tomcat]
-2026-04-28 16:13:55 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
-2026-04-28 16:13:55 INFO  WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 815 ms
-2026-04-28 16:13:55 INFO  jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-04-28 16:13:55 INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-04-28 16:13:55 INFO  HikariDataSource - HikariPool-3 - Starting...
-2026-04-28 16:13:55 INFO  HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c2d8578
-2026-04-28 16:13:55 INFO  HikariDataSource - HikariPool-3 - Start completed.
-2026-04-28 16:13:55 WARN  deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-04-28 16:13:55 INFO  pooling - HHH10001005: Database info:
-	Database JDBC URL [jdbc:mysql://localhost:3306/ecoproj]
-	Database driver: MySQL Connector/J
-	Database dialect: MySQLDialect
-	Database version: 8.0.45
-	Default catalog/schema: ecoproj/undefined
-	Autocommit mode: undefined/unknown
-	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-04-28 16:13:56 INFO  core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-04-28 16:13:56 INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-04-28 16:13:56 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2026-04-28 16:13:56 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
-2026-04-28 16:13:56 WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-04-28 16:13:56 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-04-28 16:13:56 INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-04-28 16:13:56 INFO  EcoProjApplication - Started EcoProjApplication in 1.87 seconds (process running for 176.8)
-2026-04-28 16:13:56 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
-
-
-==========================
-CONDITION EVALUATION DELTA
-==========================
-
-
-Positive matches:
------------------
-
-    None
-
-
-Negative matches:
------------------
-
-   ServletWebSecurityAutoConfiguration.EnableWebSecurityConfiguration:
-      Did not match:
-         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
-      Matched:
-         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
-
-   ServletWebSecurityAutoConfiguration.SecurityFilterChainConfiguration:
-      Did not match:
-         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
-
-   UserDetailsServiceAutoConfiguration:
-      Did not match:
-         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' myUserDetailsService and found beans of type 'org.springframework.security.authentication.AuthenticationProvider' authenticationProvider (OnBeanCondition)
-      Matched:
-         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
-         - found 'session' scope (OnWebApplicationCondition)
-         - AnyNestedCondition 1 matched 2 did not; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'spring.security.user.password'; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'spring.security.user.name'; NestedCondition on MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (MissingAlternativeUserDetailsManagerOrUserPropertiesConfigured)
-
-
-Exclusions:
------------
-
-    None
-
-
-Unconditional classes:
-----------------------
-
-    None
-
-
-
-2026-04-28 16:14:18 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-28 16:14:19 INFO  GracefulShutdown - Graceful shutdown complete
-2026-04-28 16:14:19 INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-04-28 16:14:19 INFO  HikariDataSource - HikariPool-3 - Shutdown initiated...
-2026-04-28 16:14:19 INFO  HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-05-07 11:57:11 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07 11:57:11 [http-nio-8080-exec-2] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: madhan@gmail.com
+2026-05-07 11:57:11 [http-nio-8080-exec-2] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: madhan@gmail.com
+2026-05-07 11:57:11 [http-nio-8080-exec-2] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_ADMIN, DELETE:/admin/user/**, GET:/user/products/**, PUT:/admin/product/**, POST:/admin/product, GET:/user/products, DELETE:/admin/product/**, GET:/user/profile]
+2026-05-07 11:57:11 [http-nio-8080-exec-2] INFO  com.example.ecoProj.config.JwtFilter - Request: GET /user/profile
+2026-05-07 11:57:15 [http-nio-8080-exec-3] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: madhan@gmail.com
+2026-05-07 11:57:15 [http-nio-8080-exec-3] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: madhan@gmail.com
+2026-05-07 11:57:15 [http-nio-8080-exec-3] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_ADMIN, DELETE:/admin/user/**, GET:/user/products/**, PUT:/admin/product/**, POST:/admin/product, GET:/user/products, DELETE:/admin/product/**, GET:/user/profile]
+2026-05-07 11:57:15 [http-nio-8080-exec-3] INFO  com.example.ecoProj.config.JwtFilter - Request: GET /admin/profile
+2026-05-07 11:57:15 [http-nio-8080-exec-3] WARN  com.example.ecoProj.config.JwtFilter - Access denied for user: madhan@gmail.com on GET:/admin/profile
+2026-05-07 11:57:42 [http-nio-8080-exec-5] INFO  com.example.ecoProj.Service.UserService - Authenticating user: madhan@gmail.com
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: madhan@gmail.com
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added role: ROLE_ADMIN
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/products
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/profile
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/products/**
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: PUT:/admin/product/**
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: POST:/admin/product
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: DELETE:/admin/product/**
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: DELETE:/admin/user/**
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/admin/profile
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Total unique authorities assigned: 9
+2026-05-07 11:57:43 [http-nio-8080-exec-5] INFO  com.example.ecoProj.Service.UserService - User authenticated successfully: madhan@gmail.com
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: madhan@gmail.com
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added role: ROLE_ADMIN
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/products
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/profile
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/user/products/**
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: PUT:/admin/product/**
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: POST:/admin/product
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: DELETE:/admin/product/**
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: DELETE:/admin/user/**
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/admin/profile
+2026-05-07 11:57:43 [http-nio-8080-exec-5] DEBUG com.example.ecoProj.model.MyUserDetail - Total unique authorities assigned: 9
+2026-05-07 11:57:43 [http-nio-8080-exec-5] INFO  com.example.ecoProj.Service.JwtService - Generating JWT token for user: madhan@gmail.com
+2026-05-07 11:58:44 [http-nio-8080-exec-8] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: madhan@gmail.com
+2026-05-07 11:58:44 [http-nio-8080-exec-8] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: madhan@gmail.com
+2026-05-07 11:58:44 [http-nio-8080-exec-8] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_ADMIN, DELETE:/admin/user/**, GET:/user/products/**, PUT:/admin/product/**, POST:/admin/product, GET:/user/products, DELETE:/admin/product/**, GET:/admin/profile, GET:/user/profile]
+2026-05-07 11:58:44 [http-nio-8080-exec-8] INFO  com.example.ecoProj.config.JwtFilter - Request: GET /admin/profile
+2026-05-07 11:59:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-05-07 11:59:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.

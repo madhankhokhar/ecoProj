@@ -1,0 +1,9 @@
+2026-05-06 10:39:08 [http-nio-8080-exec-3] INFO  com.example.ecoProj.Controller.UserController - Login attempt for email: madhan@gmail.com
+2026-05-06 10:39:08 [http-nio-8080-exec-3] INFO  com.example.ecoProj.Service.UserService - Authenticating user: madhan@gmail.com
+2026-05-06 10:39:08 [http-nio-8080-exec-3] INFO  com.example.ecoProj.Service.MyUserDetailsService - Loading user by email: madhan@gmail.com
+2026-05-06 10:39:09 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: madhan@gmail.com
+2026-05-06 10:39:09 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Total authorities assigned: 0
+2026-05-06 10:39:09 [http-nio-8080-exec-3] INFO  com.example.ecoProj.Service.UserService - User authenticated successfully: madhan@gmail.com
+2026-05-06 10:39:09 [http-nio-8080-exec-3] INFO  com.example.ecoProj.Service.JwtService - Generating JWT token for user: madhan@gmail.com
+2026-05-06 10:39:09 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.Service.JwtService - Generating signing key from secret
+2026-05-06 10:39:09 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.Service.JwtService - JWT token generated successfully for user: madhan@gmail.com

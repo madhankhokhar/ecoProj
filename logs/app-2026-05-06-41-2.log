@@ -1,0 +1,53 @@
+2026-05-06 12:40:15 [restartedMain] INFO  com.example.ecoProj.EcoProjApplication - Starting EcoProjApplication using Java 17.0.12 with PID 1432 (C:\Users\Java Intern\Downloads\ecoProj\target\classes started by Java Intern in C:\Users\Java Intern\Downloads\ecoProj)
+2026-05-06 12:40:15 [restartedMain] DEBUG com.example.ecoProj.EcoProjApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-05-06 12:40:15 [restartedMain] INFO  com.example.ecoProj.EcoProjApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-06 12:40:18 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-06 12:40:18 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-06 12:40:18 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-05-06 12:40:18 [restartedMain] DEBUG com.example.ecoProj.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-05-06 12:40:18 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-06 12:40:18 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-05-06 12:40:19 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-06 12:40:19 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f9020ff
+2026-05-06 12:40:19 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-06 12:40:19 [restartedMain] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/ecoProj_v2]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.45
+	Default catalog/schema: ecoProj_v2/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06 12:40:21 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06 12:40:22 [restartedMain] WARN  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-05-06 12:40:22 [restartedMain] WARN  org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06 12:40:23 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-06 12:40:23 [restartedMain] INFO  com.example.ecoProj.EcoProjApplication - Started EcoProjApplication in 8.331 seconds (process running for 10.536)
+2026-05-06 12:40:38 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-06 12:40:38 [http-nio-8080-exec-2] INFO  com.example.ecoProj.Controller.UserController - Login attempt for email: dewan@gmail.com
+2026-05-06 12:40:38 [http-nio-8080-exec-2] INFO  com.example.ecoProj.Service.MyUserDetailsService - Loading user by email: dewan@gmail.com
+2026-05-06 12:40:39 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: dewan@gmail.com
+2026-05-06 12:40:39 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Adding permission: GET:/api/products
+2026-05-06 12:40:39 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Adding permission: GET:/api/products/**
+2026-05-06 12:40:39 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Adding permission: GET:/profile
+2026-05-06 12:40:39 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Total authorities assigned: 4
+2026-05-06 12:40:39 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: dewan@gmail.com
+2026-05-06 12:40:39 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Adding permission: GET:/api/products
+2026-05-06 12:40:39 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Adding permission: GET:/api/products/**
+2026-05-06 12:40:39 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Adding permission: GET:/profile
+2026-05-06 12:40:39 [http-nio-8080-exec-2] DEBUG com.example.ecoProj.model.MyUserDetail - Total authorities assigned: 4
+2026-05-06 12:40:39 [http-nio-8080-exec-2] INFO  com.example.ecoProj.Service.JwtService - Generating JWT token for user: dewan@gmail.com
+2026-05-06 12:41:38 [http-nio-8080-exec-4] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: dewan@gmail.com
+2026-05-06 12:41:38 [http-nio-8080-exec-4] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: dewan@gmail.com
+2026-05-06 12:41:38 [http-nio-8080-exec-4] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_USER, GET:/api/products, GET:/api/products/**, GET:/profile]
+2026-05-06 12:41:38 [http-nio-8080-exec-4] INFO  com.example.ecoProj.config.JwtFilter - Request: GET /profile
+2026-05-06 12:41:38 [http-nio-8080-exec-4] INFO  com.example.ecoProj.Controller.UserController - Profile endpoint accessed
+2026-05-06 12:41:44 [http-nio-8080-exec-5] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: dewan@gmail.com
+2026-05-06 12:41:44 [http-nio-8080-exec-5] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: dewan@gmail.com
+2026-05-06 12:41:44 [http-nio-8080-exec-5] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_USER, GET:/api/products, GET:/api/products/**, GET:/profile]
+2026-05-06 12:41:44 [http-nio-8080-exec-5] INFO  com.example.ecoProj.config.JwtFilter - Request: PUT /profile
+2026-05-06 12:41:44 [http-nio-8080-exec-5] WARN  com.example.ecoProj.config.JwtFilter - Access denied for user: dewan@gmail.com on PUT:/profile

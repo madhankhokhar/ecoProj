@@ -1,53 +1,67 @@
 package com.example.ecoProj.model;
 
+import com.example.ecoProj.repository.PermissionApiRepo;
+import com.example.ecoProj.repository.UserRoleRepo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import com.example.ecoProj.repository.UserRoleRepo;
-import com.example.ecoProj.repository.RolePermissionRepo;
 
-
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class MyUserDetail implements UserDetails {
 
-    private User user;
-    private UserRoleRepo userRoleRepo;
-    private RolePermissionRepo rolePermissionRepo;
+    private static final Logger logger = LogManager.getLogger(MyUserDetail.class);
+
+    private final User user;
+    private final UserRoleRepo userRoleRepo;
+    private final PermissionApiRepo permissionApiRepo;
 
     public MyUserDetail(User user,
                         UserRoleRepo userRoleRepo,
-                        RolePermissionRepo rolePermissionRepo) {
+                        PermissionApiRepo permissionApiRepo) {
         this.user = user;
         this.userRoleRepo = userRoleRepo;
-        this.rolePermissionRepo = rolePermissionRepo;
+        this.permissionApiRepo = permissionApiRepo;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
-        List<GrantedAuthority> authorities = new ArrayList<>();
+        logger.debug("Loading authorities for user: {}", user.getEmail());
 
+        // 🔥 Use Set to avoid duplicates
+        Set<String> authoritySet = new HashSet<>();
+
+        // ✅ 1. Add Roles
         List<UserRole> roles = userRoleRepo.findByUser(user);
-
-        for(UserRole ur : roles){
+        for (UserRole ur : roles) {
             Role role = ur.getRole();
 
-            authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
+            String roleName = "ROLE_" + role.getRoleName();
+            authoritySet.add(roleName);
 
-            List<RolePermission> permissions = rolePermissionRepo.findByRole(role);
-
-            for(RolePermission rp : permissions){
-                authorities.add(
-                        new SimpleGrantedAuthority(
-                                rp.getPermission().getPermissionName()
-                        )
-                );
-            }
+            logger.debug("Added role: {}", roleName);
         }
+
+        // ✅ 2. Fetch APIs in ONE query (optimized)
+        List<Api> apis = permissionApiRepo.findApisByUser(user);
+
+        for (Api api : apis) {
+            String perm = api.getMethod() + ":" + api.getPath();
+            authoritySet.add(perm);
+
+            logger.debug("Added permission: {}", perm);
+        }
+
+        // ✅ Convert to GrantedAuthority list
+        List<GrantedAuthority> authorities = authoritySet.stream()
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
+
+        logger.debug("Total unique authorities assigned: {}", authorities.size());
 
         return authorities;
     }

@@ -1,0 +1,10 @@
+2026-05-06 15:57:22 [http-nio-8080-exec-9] INFO  com.example.ecoProj.Controller.UserController - Register request received for email: madhan@gmail.com
+2026-05-06 15:57:22 [http-nio-8080-exec-9] INFO  com.example.ecoProj.Service.UserService - Registering user: madhan@gmail.com
+2026-05-06 15:57:29 [http-nio-8080-exec-10] INFO  com.example.ecoProj.Controller.UserController - Login attempt for email: madhan@gmail.com
+2026-05-06 15:57:29 [http-nio-8080-exec-10] INFO  com.example.ecoProj.Service.UserService - Authenticating user: madhan@gmail.com
+2026-05-06 15:57:29 [http-nio-8080-exec-10] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: madhan@gmail.com
+2026-05-06 15:57:29 [http-nio-8080-exec-10] DEBUG com.example.ecoProj.model.MyUserDetail - Total unique authorities assigned: 0
+2026-05-06 15:57:29 [http-nio-8080-exec-10] INFO  com.example.ecoProj.Service.UserService - User authenticated successfully: madhan@gmail.com
+2026-05-06 15:57:29 [http-nio-8080-exec-10] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: madhan@gmail.com
+2026-05-06 15:57:29 [http-nio-8080-exec-10] DEBUG com.example.ecoProj.model.MyUserDetail - Total unique authorities assigned: 0
+2026-05-06 15:57:29 [http-nio-8080-exec-10] INFO  com.example.ecoProj.Service.JwtService - Generating JWT token for user: madhan@gmail.com

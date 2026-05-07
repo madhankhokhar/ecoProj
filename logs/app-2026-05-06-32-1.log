@@ -1,0 +1,5 @@
+2026-05-06 16:32:09 [http-nio-8080-exec-6] INFO  com.example.ecoProj.config.JwtFilter - JWT found for user: madhan@gmail.com
+2026-05-06 16:32:09 [http-nio-8080-exec-6] INFO  com.example.ecoProj.config.JwtFilter - User authenticated via JWT: madhan@gmail.com
+2026-05-06 16:32:09 [http-nio-8080-exec-6] INFO  com.example.ecoProj.config.JwtFilter - Authorities: [ROLE_ADMIN, DELETE:/api/product/**, GET:/api/products, GET:/api/products/**, GET:/profile, POST:/manage-products, POST:/delete-user, POST:/api/product, PUT:/api/product/**]
+2026-05-06 16:32:09 [http-nio-8080-exec-6] INFO  com.example.ecoProj.config.JwtFilter - Request: GET /profile
+2026-05-06 16:32:09 [http-nio-8080-exec-6] INFO  com.example.ecoProj.Controller.UserController - Profile endpoint accessed

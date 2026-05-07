@@ -1,0 +1,33 @@
+2026-05-06 10:42:05 [http-nio-8080-exec-7] INFO  com.example.ecoProj.Controller.UserController - Register request received for email: dewan@gmail.com
+2026-05-06 10:42:05 [http-nio-8080-exec-7] INFO  com.example.ecoProj.Service.UserService - Registering user: dewan@gmail.com
+2026-05-06 10:44:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-06 10:44:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-06 10:44:48 [restartedMain] INFO  com.example.ecoProj.EcoProjApplication - Starting EcoProjApplication using Java 17.0.12 with PID 748 (C:\Users\Java Intern\Downloads\ecoProj\target\classes started by Java Intern in C:\Users\Java Intern\Downloads\ecoProj)
+2026-05-06 10:44:48 [restartedMain] DEBUG com.example.ecoProj.EcoProjApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-05-06 10:44:48 [restartedMain] INFO  com.example.ecoProj.EcoProjApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-06 10:44:51 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-06 10:44:51 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-06 10:44:51 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-05-06 10:44:51 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-06 10:44:51 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-05-06 10:44:52 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-06 10:44:53 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6efb294c
+2026-05-06 10:44:53 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-06 10:44:53 [restartedMain] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/ecoProj_v2]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.45
+	Default catalog/schema: ecoProj_v2/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-06 10:44:55 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-06 10:44:56 [restartedMain] DEBUG com.example.ecoProj.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-05-06 10:44:56 [restartedMain] WARN  org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-05-06 10:44:57 [restartedMain] WARN  org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-06 10:44:57 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-06 10:44:57 [restartedMain] INFO  com.example.ecoProj.EcoProjApplication - Started EcoProjApplication in 9.774 seconds (process running for 12.068)

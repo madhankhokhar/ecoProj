@@ -1,47 +1,39 @@
 package com.example.ecoProj.Controller;
 
-import com.example.ecoProj.Service.UserService;
-import com.example.ecoProj.model.User;
+import com.example.ecoProj.Service.ProductService;
+import com.example.ecoProj.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
-    public UserService service;
+    private ProductService service;
 
-    @PostMapping("/register")
-    public User register(@RequestBody User user){
-        return service.register(user);
+    @GetMapping("/products")
+    public ResponseEntity<List<Product>> getAllProducts() {
+        return ResponseEntity.ok(service.getAllProducts());
     }
 
-    @PostMapping("/login")
-    public String login(@RequestBody User user){
-        System.out.println(user);
-        return service.verify(user);
+    @GetMapping("/products/{id}")
+    public ResponseEntity<Product> getProductById(@PathVariable int id) {
+
+        Product product = service.getProductById(id);
+
+        if (product != null) {
+            return ResponseEntity.ok(product);
+        }
+
+        return ResponseEntity.notFound().build();
     }
-      @GetMapping("/profile")
-        public String profile(){
+
+    @GetMapping("/profile")
+    public String profile() {
         return "User Profile";
     }
-
-    @GetMapping("/dashboard")
-    public String dashboard(){
-        return "Dashboard";
-    }
-    
-    @GetMapping("/delete-user")
-    public String deleteUser(){
-        return "Delete User";
-    }
-
-    @GetMapping("/manage-products")
-    public String manageProducts(){
-        return "Manage Products";
-    }
-
 }

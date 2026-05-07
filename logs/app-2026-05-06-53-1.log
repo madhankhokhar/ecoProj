@@ -1,0 +1,7 @@
+2026-05-06 11:53:58 [tomcat-shutdown] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-05-06 11:53:59 [Thread-12] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-05-06 11:53:59 [Thread-12] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2026-05-06 11:53:59 [Thread-12] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2026-05-06 11:53:59 [restartedMain] INFO  com.example.ecoProj.EcoProjApplication - Starting EcoProjApplication using Java 17.0.12 with PID 11468 (C:\Users\Java Intern\Downloads\ecoProj\target\classes started by Java Intern in C:\Users\Java Intern\Downloads\ecoProj)
+2026-05-06 11:53:59 [restartedMain] DEBUG com.example.ecoProj.EcoProjApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-05-06 11:53:59 [restartedMain] INFO  com.example.ecoProj.EcoProjApplication - No active profile set, falling back to 1 default profile: "default"

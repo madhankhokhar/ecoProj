@@ -30,19 +30,9 @@ public class SecurityConfig {
         return http
                 .csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(request -> request
-                        .requestMatchers("/register","/login").permitAll()
-
-                        .requestMatchers("/profile").hasAuthority("VIEW_PROFILE")
-
-                        .requestMatchers("/delete-user").hasAuthority("DELETE_USER")
-
-                        .requestMatchers("/manage-products").hasAuthority("MANAGE_PRODUCTS")
-
+                        .requestMatchers("/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
-
-
-                //.httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
@@ -70,10 +60,13 @@ public class SecurityConfig {
 
     @Bean
     public AuthenticationProvider authenticationProvider(UserDetailsService userDetailsService){
+//        DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService);
+//        //provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
+//        provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
+//        //provider.setUserDetailsService(userDetailsService);
+//        return provider;
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService);
-        //provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
         provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
-        //provider.setUserDetailsService(userDetailsService);
         return provider;
     }
 

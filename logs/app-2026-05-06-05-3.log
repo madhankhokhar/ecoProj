@@ -1,0 +1,28 @@
+2026-05-06 18:05:11 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-06 18:05:11 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-05-06 18:05:17 [http-nio-8080-exec-3] INFO  com.example.ecoProj.Controller.UserController - Login attempt for email: madhan@gmail.com
+2026-05-06 18:05:17 [http-nio-8080-exec-3] INFO  com.example.ecoProj.Service.UserService - Authenticating user: madhan@gmail.com
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: madhan@gmail.com
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added role: ROLE_ADMIN
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/api/products
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/api/products/**
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/profile
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: POST:/api/product
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: PUT:/api/product/**
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: DELETE:/api/product/**
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: POST:/delete-user
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: POST:/manage-products
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Total unique authorities assigned: 9
+2026-05-06 18:05:18 [http-nio-8080-exec-3] INFO  com.example.ecoProj.Service.UserService - User authenticated successfully: madhan@gmail.com
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Loading authorities for user: madhan@gmail.com
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added role: ROLE_ADMIN
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/api/products
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/api/products/**
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: GET:/profile
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: POST:/api/product
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: PUT:/api/product/**
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: DELETE:/api/product/**
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: POST:/delete-user
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Added permission: POST:/manage-products
+2026-05-06 18:05:18 [http-nio-8080-exec-3] DEBUG com.example.ecoProj.model.MyUserDetail - Total unique authorities assigned: 9
+2026-05-06 18:05:18 [http-nio-8080-exec-3] INFO  com.example.ecoProj.Service.JwtService - Generating JWT token for user: madhan@gmail.com
