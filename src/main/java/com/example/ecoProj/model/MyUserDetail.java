@@ -32,10 +32,10 @@ public class MyUserDetail implements UserDetails {
 
         logger.debug("Loading authorities for user: {}", user.getEmail());
 
-        // 🔥 Use Set to avoid duplicates
+        //  Use Set to avoid duplicates
         Set<String> authoritySet = new HashSet<>();
 
-        // ✅ 1. Add Roles
+        //  1. Add Roles
         List<UserRole> roles = userRoleRepo.findByUser(user);
         for (UserRole ur : roles) {
             Role role = ur.getRole();
@@ -46,7 +46,7 @@ public class MyUserDetail implements UserDetails {
             logger.debug("Added role: {}", roleName);
         }
 
-        // ✅ 2. Fetch APIs in ONE query (optimized)
+        //  2. Fetch APIs in ONE query (optimized)
         List<Api> apis = permissionApiRepo.findApisByUser(user);
 
         for (Api api : apis) {
@@ -56,7 +56,7 @@ public class MyUserDetail implements UserDetails {
             logger.debug("Added permission: {}", perm);
         }
 
-        // ✅ Convert to GrantedAuthority list
+        //  Convert to GrantedAuthority list
         List<GrantedAuthority> authorities = authoritySet.stream()
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
