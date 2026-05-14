@@ -1,10 +1,10 @@
 package com.example.ecoProj.Service;
 
 
-import com.example.ecoProj.model.MyUserDetail;
 import com.example.ecoProj.model.User;
 import com.example.ecoProj.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import java.util.concurrent.CompletableFuture;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,12 +35,35 @@ public class UserService {
     @Autowired
     private MyUserDetailsService userDetailsService;
 
+    @Autowired
+    private EmailService emailService;
+
+
+    @Autowired
+    private TaskExecutor taskExecutor;
+
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
+
     public User register(User user) {
+
         logger.info("Registering user: {}", user.getEmail());
+
         user.setPassword(encoder.encode(user.getPassword()));
-        return repo.save(user);
+
+        User savedUser = repo.save(user);
+
+        // Async email sending
+        CompletableFuture.runAsync(() -> {
+
+            emailService.sendRegistrationEmail(
+                    savedUser.getEmail(),
+                    savedUser.getEmail()
+            );
+
+        }, taskExecutor);
+
+        return savedUser;
     }
 
     public String verify(User user) {
