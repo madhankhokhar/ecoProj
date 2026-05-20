@@ -39,12 +39,12 @@ public class ApiLoader implements CommandLineRunner {
     @Override
     public void run(String... args) {
 
-        // ================= CREATE PERMISSIONS =================
+        //  CREATE PERMISSIONS 
 
         Permission userPerm = createPermission("USER_PERMISSION");
         Permission adminPerm = createPermission("ADMIN_PERMISSION");
 
-        // ================= SCAN ALL CONTROLLERS =================
+        //  SCAN ALL CONTROLLERS 
 
         Map<RequestMappingInfo, org.springframework.web.method.HandlerMethod> map =
                 handlerMapping.getHandlerMethods();
@@ -62,7 +62,7 @@ public class ApiLoader implements CommandLineRunner {
 
                 //System.out.println("Found API: " + path);
 
-                // ================= FILTER ONLY PROJECT APIs =================
+                //  FILTER ONLY PROJECT APIs 
 
                 if (!path.startsWith("/user") &&
                         !path.startsWith("/admin") &&
@@ -70,7 +70,7 @@ public class ApiLoader implements CommandLineRunner {
                     continue;
                 }
 
-                // ================= HANDLE METHODS =================
+                //  HANDLE METHODS 
 
                 if (methods.isEmpty()) {
 
@@ -96,16 +96,16 @@ public class ApiLoader implements CommandLineRunner {
             }
         }
 
-        // ================= MAP ROLES =================
+        //  MAP ROLES 
 
         mapRoles(userPerm, adminPerm);
 
 //        System.out.println("✅ APIs + Permissions mapped successfully");
     }
 
-    // =========================================================
-    // ===================== CORE LOGIC ========================
-    // =========================================================
+    
+    // ==== CORE LOGIC =======
+    
 
     private void process(String method,
                          String path,
@@ -118,7 +118,7 @@ public class ApiLoader implements CommandLineRunner {
         // Save API
         Api api = createApi(method, normalizedPath);
 
-        // ================= AUTO ASSIGN PERMISSIONS =================
+        //  AUTO ASSIGN PERMISSIONS 
 
         if (normalizedPath.startsWith("/user")) {
 
@@ -130,9 +130,9 @@ public class ApiLoader implements CommandLineRunner {
         }
     }
 
-    // =========================================================
-    // ======================= HELPERS =========================
-    // =========================================================
+    
+     //HELPERS ========
+    
 
     private String normalizePath(String path) {
 
@@ -211,13 +211,13 @@ public class ApiLoader implements CommandLineRunner {
 
         // USER ROLE = 2
         Role userRole =
-                roleRepo.findById(2).orElse(null);
+                roleRepo.findByRoleName("USER").orElse(null);
 
         // ADMIN ROLE = 1
         Role adminRole =
-                roleRepo.findById(1).orElse(null);
+                roleRepo.findByRoleName("ADMIN").orElse(null);
 
-        // ================= USER ROLE =================
+        //  USER ROLE 
 
         if (userRole != null) {
 
@@ -239,7 +239,7 @@ public class ApiLoader implements CommandLineRunner {
             }
         }
 
-        // ================= ADMIN ROLE =================
+        //  ADMIN ROLE 
 
         if (adminRole != null) {
 

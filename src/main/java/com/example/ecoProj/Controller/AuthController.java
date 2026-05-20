@@ -1,7 +1,11 @@
 package com.example.ecoProj.Controller;
 
 import com.example.ecoProj.Service.UserService;
-import com.example.ecoProj.model.User;
+import com.example.ecoProj.dto.request.LoginRequest;
+import com.example.ecoProj.dto.request.RegisterRequest;
+import com.example.ecoProj.dto.response.AuthResponse;
+import com.example.ecoProj.dto.response.UserResponse;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,12 +17,18 @@ public class AuthController {
     private UserService service;
 
     @PostMapping("/register")
-    public User register(@RequestBody User user) {
-        return service.register(user);
+    public UserResponse register(
+            @Valid @RequestBody RegisterRequest request) {
+
+        return service.register(request);
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody User user) {
-        return service.verify(user);
+    public AuthResponse login(
+            @Valid @RequestBody LoginRequest request) {
+
+        return new AuthResponse(
+                service.verify(request)
+        );
     }
 }

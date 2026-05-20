@@ -1,6 +1,8 @@
 package com.example.ecoProj.config;
 
 import com.example.ecoProj.Service.JwtService;
+import com.example.ecoProj.exception.ForbiddenException;
+import com.example.ecoProj.exception.UnauthorizedException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -9,19 +11,22 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
-    private static final Logger logger = LogManager.getLogger(JwtFilter.class);
+    private static final Logger logger =
+            LogManager.getLogger(JwtFilter.class);
 
     @Autowired
     private JwtService jwtService;
@@ -34,45 +39,97 @@ public class JwtFilter extends OncePerRequestFilter {
 
         String path = request.getRequestURI();
 
-        // Skip public endpoints
-        if (path.equals("/login") || path.equals("/register")) {
+        // PUBLIC ENDPOINTS
+        if (path.startsWith("/auth")) {
+
             filterChain.doFilter(request, response);
+
             return;
         }
 
-        final String authHeader = request.getHeader("Authorization");
+        final String authHeader =
+                request.getHeader("Authorization");
+
         String token = null;
         String username = null;
 
-        try {
-            // Step 1: Extract JWT
-            if (authHeader != null && authHeader.startsWith("Bearer ")) {
-                token = authHeader.substring(7);
-                username = jwtService.extractUserName(token);
+        Set<String> exactPermissions =
+                new HashSet<>();
 
-                logger.info("JWT found for user: {}", username);
+        List<String> wildcardPermissions =
+                new ArrayList<>();
+
+        try {
+
+            // EXTRACT JWT
+
+            if (authHeader != null &&
+                    authHeader.startsWith("Bearer ")) {
+
+                token = authHeader.substring(7);
+
+                username =
+                        jwtService.extractUserName(token);
+
+                logger.info(
+                        "JWT found for user: {}",
+                        username
+                );
             }
 
-            // Step 2: Validate & authenticate
-            if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            // AUTHENTICATION
 
-                if (jwtService.validateToken(token, username)) {
+            if (username != null &&
+                    SecurityContextHolder.getContext()
+                            .getAuthentication() == null) {
 
-                    //  Extract roles + permissions from JWT
-                    List<String> roles = jwtService.extractRoles(token);
-                    List<String> permissions = jwtService.extractPermissions(token);
+                if (jwtService.validateToken(
+                        token,
+                        username
+                )) {
 
-                    //  Combine into authorities
-                    List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+                    List<String> roles =
+                            jwtService.extractRoles(token);
+
+                    List<String> permissions =
+                            jwtService.extractPermissions(token);
+
+                    List<SimpleGrantedAuthority> authorities =
+                            new ArrayList<>();
+
+                    // ROLES
 
                     if (roles != null) {
-                        roles.forEach(role ->
-                                authorities.add(new SimpleGrantedAuthority(role)));
+
+                        for (String role : roles) {
+
+                            authorities.add(
+                                    new SimpleGrantedAuthority(role)
+                            );
+                        }
                     }
 
+                    // PERMISSIONS
+
                     if (permissions != null) {
-                        permissions.forEach(perm ->
-                                authorities.add(new SimpleGrantedAuthority(perm)));
+
+                        for (String permission : permissions) {
+
+                            authorities.add(
+                                    new SimpleGrantedAuthority(permission)
+                            );
+
+                            // Separate exact & wildcard permissions
+
+                            if (permission.endsWith("/**")) {
+
+                                wildcardPermissions.add(permission);
+
+                            } else {
+
+                                exactPermissions.add(permission);
+                            }
+                        }
                     }
 
                     UsernamePasswordAuthenticationToken authToken =
@@ -82,69 +139,171 @@ public class JwtFilter extends OncePerRequestFilter {
                                     authorities
                             );
 
-                    SecurityContextHolder.getContext().setAuthentication(authToken);
+                    SecurityContextHolder.getContext()
+                            .setAuthentication(authToken);
 
-                    logger.info("User authenticated via JWT: {}", username);
+                    logger.info(
+                            "User authenticated via JWT: {}",
+                            username
+                    );
+
                 } else {
-                    logger.warn("Invalid JWT token for user: {}", username);
-                }
-            }
 
-            // Step 3: Authorization
-            if (SecurityContextHolder.getContext().getAuthentication() != null) {
+                    logger.warn(
+                            "Invalid JWT token for user: {}",
+                            username
+                    );
 
-                String method = request.getMethod();
-                String reqPath = request.getRequestURI();
+                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                    response.setContentType("application/json");
 
-                logger.info("Authorities: {}",
-                        SecurityContextHolder.getContext().getAuthentication().getAuthorities());
+                    response.getWriter().write("""
+                    {
+                        "status": 401,
+                        "error": "UNAUTHORIZED",
+                        "message": "Invalid JWT token"
+                    }
+                    """);
 
-                logger.info("Request: {} {}", method, reqPath);
-
-                boolean hasPermission = SecurityContextHolder.getContext()
-                        .getAuthentication()
-                        .getAuthorities()
-                        .stream()
-                        .anyMatch(auth -> {
-
-                            String authority = auth.getAuthority();
-
-                            //  Ignore roles
-                            if (!authority.contains(":")) return false;
-
-                            String[] parts = authority.split(":", 2);
-                            String permMethod = parts[0];
-                            String permPath = parts[1];
-
-                            // Method match
-                            if (!permMethod.equals(method)) return false;
-
-                            // Exact match
-                            if (permPath.equals(reqPath)) return true;
-
-                            // Wildcard match
-                            if (permPath.endsWith("/**")) {
-                                String basePath = permPath.substring(0, permPath.length() - 3);
-                                return reqPath.startsWith(basePath);
-                            }
-
-                            return false;
-                        });
-
-                if (!hasPermission) {
-                    logger.warn("Access denied for user: {} on {}:{}", username, method, reqPath);
-
-                    response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                    response.getWriter().write("Forbidden: You don't have permission");
                     return;
                 }
             }
 
+            // UNAUTHORIZED
+
+            if (SecurityContextHolder.getContext()
+                    .getAuthentication() == null) {
+
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.setContentType("application/json");
+
+                response.getWriter().write("""
+                {
+                    "status": 401,
+                    "error": "UNAUTHORIZED",
+                    "message": "Unauthorized access"
+                }
+                """);
+
+                return;
+            }
+
+            // AUTHORIZATION
+
+            String method =
+                    request.getMethod();
+
+            String reqPath =
+                    request.getRequestURI();
+
+            String requestKey =
+                    method + ":" + reqPath;
+
+            logger.info(
+                    "Request: {} {}",
+                    method,
+                    reqPath
+            );
+
+            logger.info(
+                    "Authorities: {}",
+                    SecurityContextHolder.getContext()
+                            .getAuthentication()
+                            .getAuthorities()
+            );
+
+            // EXACT MATCH
+
+            boolean hasPermission =
+                    exactPermissions.contains(requestKey);
+
+            // WILDCARD MATCH
+
+            if (!hasPermission) {
+
+                for (String permission : wildcardPermissions) {
+
+                    int idx =
+                            permission.indexOf(':');
+
+                    if (idx == -1) {
+                        continue;
+                    }
+
+                    String permMethod =
+                            permission.substring(0, idx);
+
+                    // Method mismatch
+
+                    if (!permMethod.equals(method)) {
+                        continue;
+                    }
+
+                    String permPath =
+                            permission.substring(idx + 1);
+
+                    String basePath =
+                            permPath.substring(
+                                    0,
+                                    permPath.length() - 3
+                            );
+
+                    if (reqPath.startsWith(basePath)) {
+
+                        hasPermission = true;
+
+                        break;
+                    }
+                }
+            }
+
+            // ACCESS DENIED
+
+            if (!hasPermission) {
+
+                String currentUser =
+                        SecurityContextHolder.getContext()
+                                .getAuthentication()
+                                .getName();
+
+                logger.warn(
+                        "Access denied for user: {} on {}:{}",
+                        currentUser,
+                        method,
+                        reqPath
+                );
+
+                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+                response.setContentType("application/json");
+
+                response.getWriter().write("""
+                {
+                    "status": 403,
+                    "error": "FORBIDDEN",
+                    "message": "You don't have permission to access this resource"
+                }
+                """);
+
+                return;
+            }
+
         } catch (Exception e) {
-            logger.error("JWT processing failed", e);
+
+            logger.error(
+                    "JWT processing failed",
+                    e
+            );
+
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("Invalid JWT");
-            return;
+            response.setContentType("application/json");
+
+            response.getWriter().write("""
+            {
+                "status": 401,
+                "error": "UNAUTHORIZED",
+                "message": "JWT processing failed"
+            }
+            """);
         }
 
         filterChain.doFilter(request, response);

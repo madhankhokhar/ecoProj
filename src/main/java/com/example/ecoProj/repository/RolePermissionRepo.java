@@ -13,6 +13,6 @@ public interface RolePermissionRepo extends JpaRepository<RolePermission, Intege
 
     List<RolePermission> findByRole(Role role);
 
-    // ✅ Needed for ApiLoader
+    //  Needed for ApiLoader
     boolean existsByRoleAndPermission(Role role, Permission permission);
 }

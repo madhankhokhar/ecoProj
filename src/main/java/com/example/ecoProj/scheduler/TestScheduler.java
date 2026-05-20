@@ -153,7 +153,7 @@ public class TestScheduler {
             new AtomicBoolean(false);
 
     @Async("schedulerExecutor")
-    @Scheduled(cron = "0 * * * * *")
+    @Scheduled(cron = "0 * 12 * * *")
     public void taskA() throws InterruptedException {
 
         if (!taskARunning.compareAndSet(false, true)) {
@@ -188,7 +188,7 @@ public class TestScheduler {
     }
 
     @Async("schedulerExecutor")
-    @Scheduled(cron = "0 * * * * *")
+    @Scheduled(cron = "0 * 12 * * *")
     public void taskB() throws InterruptedException {
 
         if (!taskBRunning.compareAndSet(false, true)) {

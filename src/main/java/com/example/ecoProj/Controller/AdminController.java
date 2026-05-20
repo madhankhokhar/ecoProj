@@ -1,7 +1,9 @@
 package com.example.ecoProj.Controller;
 
 import com.example.ecoProj.Service.ProductService;
-import com.example.ecoProj.model.Product;
+import com.example.ecoProj.dto.request.ProductRequest;
+import com.example.ecoProj.dto.response.ProductResponse;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,48 +16,45 @@ public class AdminController {
     private ProductService service;
 
     @PostMapping("/product")
-    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+    public ResponseEntity<ProductResponse>
+    addProduct(
+            @Valid @RequestBody ProductRequest request
+    ) {
 
-        Product savedProduct = service.addProduct(product);
-
-        return ResponseEntity.ok(savedProduct);
+        return ResponseEntity.ok(
+                service.addProduct(request)
+        );
     }
 
     @PutMapping("/product/{id}")
-    public ResponseEntity<String> updateProduct(@PathVariable int id,
-                                                @RequestBody Product product) {
+    public ResponseEntity<ProductResponse>
+    updateProduct(
+            @PathVariable int id,
+            @Valid @RequestBody ProductRequest request
+    ) {
 
-        Product existing = service.getProductById(id);
-
-        if (existing != null) {
-
-            product.setId(id);
-
-            service.updateProduct(product);
-
-            return ResponseEntity.ok("Product updated");
-        }
-
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(
+                service.updateProduct(id, request)
+        );
     }
 
     @DeleteMapping("/product/{id}")
-    public ResponseEntity<String> deleteProduct(@PathVariable int id) {
+    public ResponseEntity<String>
+    deleteProduct(
+            @PathVariable int id
+    ) {
 
-        Product product = service.getProductById(id);
+        service.deleteProduct(id);
 
-        if (product != null) {
-
-            service.deleteProduct(id);
-
-            return ResponseEntity.ok("Product deleted");
-        }
-
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(
+                "Product deleted"
+        );
     }
 
     @DeleteMapping("/user/{id}")
-    public String deleteUser(@PathVariable int id) {
+    public String deleteUser(
+            @PathVariable int id
+    ) {
 
         return "Delete User API";
     }

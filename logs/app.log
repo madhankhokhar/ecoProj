@@ -1,2 +1,2 @@
-2026-05-14 18:26:00 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-14 18:26:00 [http-nio-8080-exec-2] INFO  com.example.ecoProj.Service.UserService - Registering user: khokharmadhan@gmail.com
+2026-05-20 17:55:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-20 17:55:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
